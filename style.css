@@ -324,7 +324,7 @@ a:hover {
     }
 }
 
-@media (max-width: 375px){
+@media (max-width: 505px){
     .card-container .card img {
         max-width: 250px !important;
         height: auto;
