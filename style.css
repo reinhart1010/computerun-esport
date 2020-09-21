@@ -40,14 +40,14 @@ h6, .h6 {
     font-size: calc(1.375rem + 1.5vw)
 }
 /* Hyperlinks */
-a {
+a:not(.button) {
     color: #249ef2;
     text-decoration: none;
-    border-bottom: 4px solid #249ef2;
+    border-bottom: 2px solid #249ef2;
 }
-a:hover {
+a:not(.button):hover {
     color: #37e2bc;
-    border-bottom: 4px solid #37e2bc;
+    border-bottom: 2px solid #37e2bc;
 }
 
 /* TOP-LEVEL COMPONENTS */
@@ -239,7 +239,7 @@ a:hover {
 .with-computerun-background {
     display: table-cell;
     text-align: center;
-    background-image: url('img/backgrounds/HomeBG-2a.png');
+    background-image: url('/img/backgrounds/HomeBG-2a.png');
     width: 100vw;
     height: 29vw;
     background-size: 60%;
@@ -310,8 +310,7 @@ a:hover {
     border-radius: 24px;
 }
 .card-container .card img {
-    max-width: 250px;
-    height: auto;
+    width: 100%;
 }
 /* @media (min-width: 992px) and (max-width: 1199px){
     .card-container .card {
@@ -324,24 +323,17 @@ a:hover {
     }
 }
 
-@media (max-width: 505px){
-    .card-container .card img {
-        max-width: 250px !important;
-        height: auto;
-    }
-}
-
 /* Image Cards */
 .image-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-
-.image-card div {
+.image-card div:nth-child(even){
     text-align: center;
-    /* vertical-align: top; */
+    vertical-align: top;
 }
-/* @media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .image-card div:nth-child(odd) {
         width: 25%;
     }
@@ -366,20 +358,6 @@ a:hover {
         width: calc(65% - 8px);
         margin-left: 8px;
     }
-} */
-
-.containerx {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* padding: 0 10rem; */
-}
-
-.placeholder-posters {
-    border: 8px dashed #bbbbbb;
-    padding: 32px;
 }
 
 /* Placeholder for sponsors */
@@ -390,7 +368,7 @@ a:hover {
 
 /* Footers */
 .footer {
-    background-image: url('img/backgrounds/8.png');
+    background-image: url('/img/backgrounds/8.png');
     background-color: #0c1631;
     background-position: top left;
     background-size: 100%;
@@ -422,18 +400,50 @@ a:hover {
         width: 100%;
     }
     .footer .himsisfo-himti-container {
-        width: 310px;
-        height: auto;
+        width: 325px;
+        height: 141.12px;
         margin-bottom: 20px;
     }
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    min-width: 120px;
+    border-radius: 20px;
+    padding: 8px 12px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.button-white {
+    background-color: #ffffff;
+    color: #000000;
+}
+.button-gradient {
+    background: -webkit-linear-gradient(115deg, #37e2bc, #249ef2);
+    color: #ffffff;
+}
+.button:not(:only-child):not(:last-child) {
+    margin-right: 6px;
 }
 
 /* UTILITY FUNCTIONS */
 /* Backgrounds*/
 .bg-home {
-    background-image: url('img/backgrounds/HomeBG-1a.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
+    background-image: url('/img/backgrounds/HomeBG-1a.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
     background-position: right -100px top -250px, left top;
     background-size: 1000px, cover;
+    background-repeat: no-repeat;
+}
+.bg-event {
+    background-image: url('/img/backgrounds/HomeBG-1.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
+    background-position: center;
+    background-size: contain, cover;
     background-repeat: no-repeat;
 }
 @media (max-width: 1199px){
@@ -444,7 +454,7 @@ a:hover {
 }
 @media (max-width: 767px){
     .bg-home {
-        background-image: url('img/backgrounds/HomeBG-1b.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
+        background-image: url('/img/backgrounds/HomeBG-1b.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
         background-position: center center, left top;
         background-size: cover, cover;
     }
@@ -509,27 +519,4 @@ a:hover {
 }
 .font-800 {
     font-weight: 800;
-}
-
-/* @font-face declaration for Poppins */
-@font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Poppins Light'), local('Poppins-Light'), url(https://fonts.gstatic.com/s/poppins/v12/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url(https://fonts.gstatic.com/s/poppins/v12/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 800;
-    src: local('Poppins Bold'), local('Poppins-Bold'), url(https://fonts.gstatic.com/s/poppins/v12/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
