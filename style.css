@@ -256,6 +256,7 @@ a:not(.button):hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
@@ -268,6 +269,9 @@ a:not(.button):hover {
 }
 .icons-container.items-3 div {
     width: 33.3%;
+}
+.icons-container.items-4 div {
+    width: 25%;
 }
 .icons-container div {
     text-align: center;
@@ -283,7 +287,7 @@ a:not(.button):hover {
         position: static;
         margin-top: 0;
     }
-    .icons-container div, .icons-container.items-2 div, .icons-container.items-3 div {
+    .icons-container div, .icons-container.items-2 div, .icons-container.items-3 div, .icons-container.items-4 div {
         width: 100%;
         margin-bottom: 20px;
     }
@@ -410,7 +414,7 @@ a:not(.button):hover {
 .button {
     display: inline-block;
     min-width: 120px;
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 8px 12px;
     text-align: center;
     vertical-align: middle;
