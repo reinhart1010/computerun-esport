@@ -239,7 +239,7 @@ a:not(.button):hover {
 .with-computerun-background {
     display: table-cell;
     text-align: center;
-    background-image: url('/img/backgrounds/HomeBG-2a.png');
+    background-image: url('img/backgrounds/HomeBG-2a.png');
     width: 100vw;
     height: 29vw;
     background-size: 60%;
@@ -307,7 +307,7 @@ a:not(.button):hover {
 }
 .card-container .card {
     width: calc(33.3% - 50px);
-    margin: 8px;
+    margin: 8px 10px;
     padding: 16px;
     background-color: #ffffff;
     border: 1px solid #bbbbbb;
@@ -332,6 +332,8 @@ a:not(.button):hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .image-card div:nth-child(even){
     text-align: center;
@@ -372,7 +374,7 @@ a:not(.button):hover {
 
 /* Footers */
 .footer {
-    background-image: url('/img/backgrounds/8.png');
+    background-image: url('img/backgrounds/8.png');
     background-color: #0c1631;
     background-position: top left;
     background-size: 100%;
@@ -439,13 +441,13 @@ a:not(.button):hover {
 /* UTILITY FUNCTIONS */
 /* Backgrounds*/
 .bg-home {
-    background-image: url('/img/backgrounds/HomeBG-1a.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
+    background-image: url('img/backgrounds/HomeBG-1a.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
     background-position: right -100px top -250px, left top;
     background-size: 1000px, cover;
     background-repeat: no-repeat;
 }
 .bg-event {
-    background-image: url('/img/backgrounds/HomeBG-1.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
+    background-image: url('img/backgrounds/HomeBG-1.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
     background-position: center;
     background-size: contain, cover;
     background-repeat: no-repeat;
@@ -458,7 +460,7 @@ a:not(.button):hover {
 }
 @media (max-width: 767px){
     .bg-home {
-        background-image: url('/img/backgrounds/HomeBG-1b.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
+        background-image: url('img/backgrounds/HomeBG-1b.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
         background-position: center center, left top;
         background-size: cover, cover;
     }
@@ -485,6 +487,13 @@ a:not(.button):hover {
 .margin-1 {
     margin-left: calc(5% + env(safe-area-inset-left));
     margin-right: calc(5% + env(safe-area-inset-right));
+}
+
+.margin-3 {
+    /* margin-left: calc(20% + env(safe-area-inset-left));
+    margin-right: calc(20% + env(safe-area-inset-right)); */
+    align-items: center;
+    justify-content: center;
 }
 
 /* Text colors */
